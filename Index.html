@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Praveena Gnanasekaran | Aspiring Data Analyst | Power BI, SQL, Excel</title>
+<meta name="description" content="Portfolio of Praveena Gnanasekaran, an aspiring Data Analyst with Power BI, SQL and Advanced Excel projects in healthcare, HR and sales analytics.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a1120;--s1:#111b30;--s2:#18243d;--line:#25344f;--tx:#eaf0fa;--mu:#9fb0cb;--bl:#3b82f6;--te:#2dd4bf;--r:16px}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font:16px/1.65 "Plus Jakarta Sans",system-ui,sans-serif;background:var(--bg);color:var(--tx);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--te);outline-offset:3px;border-radius:6px}
+.w{max-width:1120px;margin:auto;padding:0 22px}
+section{padding:88px 0}
+h1,h2,h3{line-height:1.15;letter-spacing:-.02em}
+h2{font-size:clamp(1.7rem,3.4vw,2.4rem);margin-bottom:10px}
+.lead{color:var(--mu);max-width:62ch;margin-bottom:38px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:12px;font-weight:600;font-size:.95rem;border:1px solid var(--line);background:var(--s1);color:var(--tx);cursor:pointer;font-family:inherit;transition:transform .2s,border-color .2s,background .2s}
+.btn:hover{transform:translateY(-2px);border-color:var(--te)}
+.btn.p{background:linear-gradient(135deg,var(--bl),#1d9bf0 55%,var(--te));border:0;color:#04101f}
+.btn.s{padding:8px 14px;font-size:.85rem}
+svg.i{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.card{background:var(--s1);border:1px solid var(--line);border-radius:var(--r);padding:26px}
+.chip{display:inline-block;padding:4px 11px;border-radius:99px;background:var(--s2);border:1px solid var(--line);font-size:.8rem;color:var(--mu);margin:0 6px 6px 0}
+/* nav */
+header{position:sticky;top:0;z-index:20;background:rgba(10,17,32,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-weight:800;font-size:1.05rem}.logo b{color:var(--te)}
+.links{display:flex;gap:26px;align-items:center}
+.links a{color:var(--mu);font-size:.92rem;font-weight:500;transition:color .2s}
+.links a:hover,.links a.on{color:var(--tx)}
+#mb{display:none;background:0;border:1px solid var(--line);color:var(--tx);border-radius:10px;padding:8px;cursor:pointer}
+/* hero */
+.hero{padding:70px 0 40px}
+.hg{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.hero h1{font-size:clamp(2.4rem,5.6vw,4.1rem);font-weight:800;margin-bottom:20px}
+.hero h1 span{background:linear-gradient(90deg,var(--bl),var(--te));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.sub{color:var(--mu);font-size:1.1rem;max-width:54ch;margin-bottom:28px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:26px}
+.strip{display:flex;flex-wrap:wrap;gap:8px 18px;color:var(--mu);font-size:.88rem}
+.strip span{display:flex;align-items:center;gap:7px}.strip span:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--te)}
+.dash{background:var(--s1);border:1px solid var(--line);border-radius:20px;padding:18px;box-shadow:0 30px 70px -30px rgba(59,130,246,.45)}
+.dh{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+.av{width:54px;height:54px;border-radius:50%;background:linear-gradient(135deg,var(--bl),var(--te));display:grid;place-items:center;font-weight:800;color:#04101f;overflow:hidden}
+.av img{width:100%;height:100%;object-fit:cover}
+.dh small{color:var(--mu);display:block;font-size:.78rem}
+.kp{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+.kp div{background:var(--s2);border-radius:12px;padding:11px 13px;font-size:.78rem;color:var(--mu)}
+.kp b{display:block;font-size:1.25rem;color:var(--tx)}
+.bars{display:flex;align-items:flex-end;gap:7px;height:120px;background:var(--s2);border-radius:12px;padding:14px 14px 0}
+.bars i{flex:1;border-radius:6px 6px 0 0;background:linear-gradient(var(--te),var(--bl));transform-origin:bottom;animation:g 1s cubic-bezier(.2,.8,.2,1) both}
+@keyframes g{from{transform:scaleY(0)}}
+.dash p{font-size:.72rem;color:var(--mu);margin-top:10px}
+/* about / skills */
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.ab{display:grid;grid-template-columns:1.3fr 1fr;gap:34px}
+.ab p{color:var(--mu);margin-bottom:14px}
+.hl{display:flex;flex-direction:column;gap:14px}
+.hl .card{display:flex;gap:14px;padding:18px}
+.ic{width:42px;height:42px;border-radius:12px;background:var(--s2);color:var(--te);display:grid;place-items:center;flex:none}
+.hl h3{font-size:1rem}.hl p{font-size:.88rem;margin:0}
+.sk h3{font-size:1.05rem;margin-bottom:4px}
+.lv{display:flex;align-items:center;gap:10px;font-size:.82rem;color:var(--mu);margin:10px 0 14px}
+.seg{display:flex;gap:4px}.seg i{width:28px;height:6px;border-radius:4px;background:var(--line)}.seg i.f{background:linear-gradient(90deg,var(--bl),var(--te))}
+.sk details{border-top:1px solid var(--line);padding-top:10px}
+.sk summary{cursor:pointer;font-size:.85rem;color:var(--te);font-weight:600;margin-bottom:8px}
+/* projects */
+.pg{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.pc{padding:0;overflow:hidden;display:flex;flex-direction:column;transition:transform .25s,border-color .25s}
+.pc:hover{transform:translateY(-4px);border-color:var(--bl)}
+.shot{aspect-ratio:16/10;background:var(--s2);display:grid;place-items:center;color:var(--mu);font-size:.8rem;text-align:center;padding:14px;border-bottom:1px solid var(--line);background-image:repeating-linear-gradient(90deg,transparent 0 38px,rgba(255,255,255,.03) 38px 39px)}
+.shot img{width:100%;height:100%;object-fit:cover}
+.pb{padding:22px;display:flex;flex-direction:column;gap:10px;flex:1}
+.pb h3{font-size:1.2rem}.pb p{color:var(--mu);font-size:.92rem}
+.pb ul{padding-left:18px;color:var(--mu);font-size:.86rem}
+.row{display:flex;gap:10px;flex-wrap:wrap;margin-top:auto;padding-top:8px}
+/* modal */
+dialog{border:1px solid var(--line);border-radius:20px;background:var(--bg);color:var(--tx);width:min(860px,94vw);max-height:90vh;padding:0;overflow:auto}
+dialog::backdrop{background:rgba(3,7,15,.75);backdrop-filter:blur(4px)}
+dialog[open]{animation:m .3s ease}
+@keyframes m{from{opacity:0;transform:translateY(16px)}}
+.mh{display:flex;justify-content:space-between;align-items:center;padding:20px 26px;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--bg);z-index:2}
+.mb{padding:26px}
+.mb h3{font-size:1.05rem;color:var(--te);margin:22px 0 6px}.mb h3:first-child{margin-top:0}
+.mb p,.mb li{color:var(--mu);font-size:.95rem}.mb ul{padding-left:20px}
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.gal .shot{border-radius:12px;border:1px solid var(--line)}
+.note{border-left:3px solid var(--bl);padding:8px 14px;background:var(--s1);border-radius:0 10px 10px 0;font-size:.88rem}
+/* timeline etc */
+.tl{border-left:2px solid var(--line);padding-left:26px;position:relative}
+.tl:before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--te)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.cv{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
+.cv .card:first-child{grid-row:span 1}
+.band{background:linear-gradient(135deg,rgba(59,130,246,.16),rgba(45,212,191,.12));border:1px solid var(--line);border-radius:24px;padding:48px 30px;text-align:center}
+.band .lead{margin:0 auto 24px}.band .cta{justify-content:center;margin:0}
+.ct{display:grid;grid-template-columns:.8fr 1.2fr;gap:30px}
+.cl a{display:flex;gap:12px;align-items:center;padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:var(--s1);margin-bottom:12px;color:var(--mu);transition:border-color .2s}
+.cl a:hover{border-color:var(--te);color:var(--tx)}
+label{display:block;font-size:.85rem;font-weight:600;margin-bottom:6px}
+input,textarea{width:100%;background:var(--s2);border:1px solid var(--line);border-radius:10px;padding:12px 14px;color:var(--tx);font:inherit}
+input:focus,textarea:focus{outline:2px solid var(--bl);border-color:transparent}
+.fg{margin-bottom:16px}.er{color:#fca5a5;font-size:.8rem;min-height:1.1em;display:block;margin-top:4px}
+input.bad,textarea.bad{border-color:#f87171}
+#ok{color:var(--te);font-weight:600;margin-top:12px}
+footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mu);font-size:.88rem}
+.fl{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;align-items:center}
+.so{display:flex;gap:10px}.so a{width:40px;height:40px;border:1px solid var(--line);border-radius:10px;display:grid;place-items:center}.so a:hover{border-color:var(--te);color:var(--te)}
+@media(max-width:900px){.hg,.ab,.ct,.cv{grid-template-columns:1fr}.g3,.pg{grid-template-columns:1fr 1fr}.two{grid-template-columns:1fr}}
+@media(max-width:640px){section{padding:64px 0}.g3,.pg{grid-template-columns:1fr}#mb{display:block}
+.links{display:none;position:absolute;top:68px;left:0;right:0;background:var(--bg);flex-direction:column;align-items:flex-start;padding:18px 22px;border-bottom:1px solid var(--line);gap:16px}.links.o{display:flex}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header><div class="w"><nav aria-label="Main">
+<a class="logo" href="#top">Praveena<b>.</b>G</a>
+<button id="mb" aria-label="Menu" aria-expanded="false"><svg class="i" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+<div class="links" id="nl"><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#learning">Certifications</a><a href="#experience">Experience</a><a href="#contact">Contact</a></div>
+</nav></div></header>
+
+<main id="top">
+<section class="hero"><div class="w hg">
+<div>
+<h1>Turning Data Into <span>Meaningful Insights.</span></h1>
+<p class="sub">Hi, I'm Praveena Gnanasekaran, an aspiring Data Analyst passionate about exploring data, identifying patterns, and transforming information into actionable business insights.</p>
+<div class="cta">
+<a class="btn p" data-k="resume" href="resume.pdf" download>Download Resume</a>
+<a class="btn" href="#projects">Explore My Projects</a>
+<a class="btn" href="#contact">Contact Me</a></div>
+<div class="strip"><span>4+ Years Professional Experience</span><span>Data Analytics Projects</span><span>Power BI</span><span>SQL</span><span>Advanced Excel</span></div>
+</div>
+<div class="dash" aria-hidden="true">
+<div class="dh"><div class="av" id="av">PG</div><div><b>Praveena Gnanasekaran</b><small>Data Analyst | Power BI, SQL, Excel</small></div></div>
+<div class="kp"><div>Projects<b>3</b></div><div>Core tools<b>4</b></div><div>Industries<b>3</b></div></div>
+<div class="bars" id="bars"></div>
+<p>Illustration only. Healthcare, HR and Sales analytics below.</p>
+</div></div></section>
+
+<section id="about"><div class="w ab">
+<div><h2>About Me</h2><br>
+<p>I am an aspiring Data Analyst with a postgraduate degree from Bharathidasan University and over four years of previous professional experience in BPO and Data Entry operations.</p>
+<p>My professional journey has helped me develop attention to detail, accuracy, time management, and the ability to work with structured information.</p>
+<p>My interest in Data Analytics motivated me to develop technical skills in Advanced Excel, SQL, Power BI, Tableau, and Python.</p>
+<p>I enjoy working with datasets, identifying patterns, creating interactive dashboards, and converting complex information into meaningful insights.</p>
+<p>I have developed practical analytics projects in Healthcare Analytics, HR Analytics, and Sales Analytics.</p>
+<p>My goal is to begin my career as a Junior Data Analyst and contribute to data-driven business decisions while continuously improving my analytical and technical abilities.</p>
+<p><b>Target roles:</b> Junior Data Analyst, MIS Analyst, Reporting Analyst, Business Intelligence Analyst (Entry Level). Open to Remote, Hybrid and On-site work. Based in Tamil Nadu, India.</p></div>
+<div class="hl" id="hl"></div></div></section>
+
+<section id="skills"><div class="w"><h2>Technical Skills</h2><p class="lead">Levels shown as I honestly rate them today. Open a card to see the specific tools and techniques.</p><div class="g3 sk" id="sk"></div></div></section>
+
+<section id="projects"><div class="w"><h2>Featured Projects</h2><p class="lead">Three dashboards built end to end. Open any project for the business problem, method, findings and recommendations.</p><div class="pg" id="pg"></div></div></section>
+
+<section id="learning"><div class="w"><h2>Internship and Certifications</h2><p class="lead">Structured learning alongside hands-on projects.</p>
+<div class="two"><div class="card"><span class="chip">Completed</span><h3>Forage Virtual Internship</h3><p style="color:var(--mu);margin:8px 0 14px">Add the verified company or programme name, the tasks you completed and the skills you developed in the CONFIG block at the top of the script.</p><div id="fi"></div><button class="btn s p" id="vc">View Certificate</button></div>
+<div class="card"><h3>More certifications</h3><p style="color:var(--mu);margin-top:8px">Space for additional certifications and learning achievements. Add each one to the <code>CONFIG.certs</code> list and it will appear here.</p><div id="cl" style="margin-top:14px"></div></div></div></div></section>
+
+<section id="experience"><div class="w"><h2>Experience and Education</h2><p class="lead">Four years of accuracy-driven operational work is the foundation for my move into analytics.</p>
+<div class="cv"><div class="tl"><h3>BPO / Data Entry Operations</h3><p style="color:var(--mu);margin:4px 0 14px">4+ years</p><div id="tr"></div></div>
+<div class="card"><span class="chip">Education</span><h3>Postgraduate Degree</h3><p style="color:var(--mu)">Bharathidasan University<br>Completed: 2021<br><span id="spec"></span></p></div></div></div></section>
+
+<section><div class="w"><div class="band"><h2>Interested in Working Together?</h2><p class="lead">Explore my professional background, technical skills, and Data Analytics projects.</p><div class="cta"><a class="btn p" data-k="resume" href="resume.pdf" download>Download My Resume</a><a class="btn" href="#contact">Contact Me</a></div></div></div></section>
+
+<section id="contact"><div class="w"><h2>Let's Connect!</h2><p class="lead">I'm actively looking for opportunities to begin my career in Data Analytics. Feel free to connect with me regarding job opportunities, collaborations, or professional discussions.</p>
+<div class="ct"><div class="cl" id="cl2"></div>
+<form id="f" novalidate class="card"><div class="fg"><label for="n">Name</label><input id="n" autocomplete="name"><span class="er"></span></div>
+<div class="fg"><label for="e">Email</label><input id="e" type="email" autocomplete="email"><span class="er"></span></div>
+<div class="fg"><label for="m">Message</label><textarea id="m" rows="5"></textarea><span class="er"></span></div>
+<button class="btn p" type="submit">Send Message</button><p id="ok" role="status"></p></form></div></div></section>
+</main>
+
+<footer><div class="w fl"><div><b>Designed and Developed by Praveena Gnanasekaran</b><br>Turning Data Into Meaningful Insights.<br>© 2026 Praveena Gnanasekaran. All Rights Reserved.</div><div class="so" id="so"></div></div></footer>
+
+<dialog id="dg" aria-labelledby="dt"><div class="mh"><b id="dt"></b><button class="btn s" id="dx" aria-label="Close">Close</button></div><div class="mb" id="db"></div></dialog>
+
+<script>
+/* ===== EDIT THIS BLOCK: replace each empty value with your real details ===== */
+const CONFIG={
+ email:"",            // e.g. "name@example.com"
+ linkedin:"",         // full LinkedIn profile URL
+ github:"",           // full GitHub profile URL
+ photo:"",            // path to your photo, e.g. "photo.jpg"
+ resume:"resume.pdf", // your ATS-friendly PDF, saved beside index.html
+ specialization:"",   // optional degree specialization
+ internship:{company:"",tasks:[],skills:[]},
+ certificate:"",      // image or PDF path for the Forage certificate
+ certs:[],            // e.g. [{name:"...",issuer:"...",file:"cert.pdf"}]
+ transferable:["Data Accuracy","Data Validation","Attention to Detail","Record Management","Time Management","Process Compliance","Information Handling"]
+};
+const PROJECTS=[
+{id:"healthcare",t:"Healthcare Analytics Dashboard",tool:"Microsoft Power BI",d:"Interactive dashboard analysing hospital admission data to understand patient trends. Dataset period: January 2019 – May 2024.",
+ feats:["Total Patients KPI","Total Admissions","Patient Admission Trends","Admission Date Analysis","Insurance Provider Analysis","Decomposition Tree","Forecasting","Interactive Filters and Slicers"],
+ problem:"Hospital teams need a clear view of how many patients are admitted, when admissions rise or fall, and how insurance providers relate to those admissions.",
+ prep:"Data cleaning and transformation in Power Query, then a data model with relationships between the admission and date tables.",
+ analysis:"DAX measures for total patients and admissions, admission trend and date analysis, insurance provider breakdown, a decomposition tree to drill into drivers, and a forecast of future admissions.",
+ design:"KPI cards on top, trend and provider visuals in the middle, slicers for interactive filtering.",
+ shots:[],view:"",gh:""},
+{id:"hr",t:"HR Analytics Dashboard",tool:"Microsoft Power BI",d:"Interactive dashboard analysing employee information to understand workforce makeup and employee attrition patterns.",
+ feats:["Employee Overview","Employee Demographics","Attrition Analysis","Department-Wise Analysis","Job Role Analysis","Employee Distribution","KPI Cards","Interactive Slicers"],
+ problem:"HR leaders need to see who is leaving, from which departments and roles, to understand attrition and plan retention.",
+ prep:"Data cleaning and shaping in Power Query so employee attributes are consistent and ready to model.",
+ analysis:"DAX measures and visuals for headcount, demographics, attrition by department and job role, and employee distribution, filterable with slicers.",
+ design:"A KPI header, demographic and attrition visuals, and department and role breakdowns.",
+ shots:[],view:"",gh:""},
+{id:"sales",t:"Excel Sales Dashboard",tool:"Microsoft Excel",d:"Interactive dashboard built in Excel to analyse sales performance and present business information through visual reports.",
+ feats:["Pivot Tables","Pivot Charts","KPI Cards","Interactive Slicers","Sales Analysis","Category Analysis","Dashboard Design"],
+ problem:"Managers need sales performance and category contribution presented in one report they can filter themselves.",
+ prep:"Data cleaning in Excel: consistent formats, duplicates and blanks resolved, and the data structured as a table.",
+ analysis:"Pivot tables and pivot charts for sales and category analysis, linked to slicers and KPI cards on a single dashboard sheet.",
+ design:"KPI cards at the top, pivot charts beneath, and slicers that control every visual.",
+ shots:[],view:"",gh:""}];
+const SKILLS=[
+{t:"Data Analysis",icon:"M3 3v18h18M7 14l4-4 3 3 5-6",items:[["Advanced Excel",3,"Advanced"],["SQL",2,"Intermediate"],["Python",1,"Basic"]],
+ tags:["Pivot Tables","Pivot Charts","Power Query","VLOOKUP","XLOOKUP","INDEX MATCH","Data Cleaning","Excel Dashboards"]},
+{t:"SQL",icon:"M4 6c0-1.7 3.6-3 8-3s8 1.3 8 3-3.6 3-8 3-8-1.3-8-3zM4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6",items:[["SQL",2,"Intermediate"]],
+ tags:["SELECT, WHERE, ORDER BY","GROUP BY and HAVING","Joins","Subqueries","CTEs","Window Functions","Aggregate Functions","CASE Statements","Views"]},
+{t:"Power BI",icon:"M5 20V10M12 20V4M19 20v-7",items:[["Power BI",2,"Intermediate"]],
+ tags:["Data Cleaning and Transformation","Power Query","Data Modeling","Relationships","DAX Measures","CALCULATE and FILTER","Time Intelligence","Interactive Dashboards","Drill-through","Bookmarks","KPI Visualization"]},
+{t:"Tableau",icon:"M12 3v18M3 12h18M6 6l12 12M18 6L6 18",items:[["Tableau",1,"Basic"]],tags:["Data Visualization","Interactive Charts","Filters","Dashboard Development"]},
+{t:"Python",icon:"M8 9l-4 3 4 3M16 9l4 3-4 3M14 5l-4 14",items:[["Python",1,"Basic"]],
+ tags:["Python Fundamentals","Variables and Data Types","Conditional Statements","Loops","Functions","Lists, Tuples, Sets, Dictionaries","Introduction to NumPy and Pandas"]}];
+const HL=[["Analytical Thinking","M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5c.7.7 1 1.5 1 2.5h6c0-1 .3-1.8 1-2.5A6 6 0 0 0 12 3z","Breaking questions into data I can measure and test."],
+["Data Visualization","M3 3v18h18M7 15l4-4 3 3 5-6","Dashboards that make patterns easy to read."],
+["Continuous Learning","M2 8l10-5 10 5-10 5zM6 10v5c3 2 9 2 12 0v-5","Growing across Excel, SQL, Power BI, Tableau and Python."]];
+/* ===== end of editable block ===== */
+
+const $=(s,r=document)=>r.querySelector(s);
+const ic=p=>`<svg class="i" viewBox="0 0 24 24"><path d="${p}"/></svg>`;
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const li=a=>a.map(x=>`<li>${esc(x)}</li>`).join("");
+const chips=a=>a.map(x=>`<span class="chip">${esc(x)}</span>`).join("");
+const shot=(src,label)=>src?`<div class="shot"><img src="${esc(src)}" alt="${esc(label)}" loading="lazy"></div>`:`<div class="shot">Dashboard screenshot placeholder<br>Add the image path to this project's <code>shots</code> list</div>`;
+
+/* hero chart + photo */
+$("#bars").innerHTML=[40,62,48,78,58,90,70].map((h,i)=>`<i style="height:${h}%;animation-delay:${i*.08}s"></i>`).join("");
+if(CONFIG.photo)$("#av").innerHTML=`<img src="${esc(CONFIG.photo)}" alt="Praveena Gnanasekaran">`;
+document.querySelectorAll('[data-k="resume"]').forEach(a=>a.href=CONFIG.resume);
+
+/* about */
+$("#hl").innerHTML=HL.map(h=>`<div class="card"><div class="ic">${ic(h[1])}</div><div><h3>${h[0]}</h3><p>${h[2]}</p></div></div>`).join("");
+
+/* skills */
+$("#sk").innerHTML=SKILLS.map(s=>`<div class="card"><div class="ic" style="margin-bottom:14px">${ic(s.icon)}</div><h3>${s.t}</h3>
+${s.items.map(i=>`<div class="lv"><div class="seg" role="img" aria-label="${i[0]}: ${i[2]}">${[1,2,3].map(n=>`<i class="${n<=i[1]?"f":""}"></i>`).join("")}</div><span>${i[0]}: ${i[2]}</span></div>`).join("")}
+<details><summary>Skills and techniques</summary>${chips(s.tags)}</details></div>`).join("");
+
+/* projects */
+$("#pg").innerHTML=PROJECTS.map(p=>`<article class="card pc">${shot(p.shots[0],p.t+" dashboard")}<div class="pb"><span class="chip" style="align-self:flex-start">${p.tool}</span><h3>${p.t}</h3><p>${p.d}</p><ul>${li(p.feats.slice(0,4))}</ul>
+<div class="row"><button class="btn s p" data-p="${p.id}">View Project</button>${p.gh?`<a class="btn s" href="${esc(p.gh)}" target="_blank" rel="noopener">GitHub</a>`:""}</div></div></article>`).join("");
+
+const dg=$("#dg");
+function open(title,html){$("#dt").textContent=title;$("#db").innerHTML=html;dg.showModal();dg.scrollTop=0}
+document.addEventListener("click",e=>{
+ const b=e.target.closest("[data-p]");
+ if(b){const p=PROJECTS.find(x=>x.id===b.dataset.p);
+  open(p.t,`<span class="chip">${p.tool}</span><p style="margin-top:8px">${p.d}</p>
+  <h3>Screenshots</h3><div class="gal">${[0,1,2].map(i=>shot(p.shots[i],p.t+" screenshot "+(i+1))).join("")}</div>
+  <h3>Business problem</h3><p>${p.problem}</p><h3>Key features</h3><ul>${li(p.feats)}</ul>
+  <h3>Data preparation</h3><p>${p.prep}</p><h3>Analysis performed</h3><p>${p.analysis}</p><h3>Dashboard design</h3><p>${p.design}</p>
+  <h3>Key insights</h3><p class="note">Add your real findings here, taken from your dataset and screenshots. No figures are shown until you add verified ones.</p>
+  <h3>Business recommendations</h3><p class="note">Add the recommendations that follow from your findings.</p>
+  <h3>Tools</h3>${chips([p.tool])}
+  <div class="row" style="margin-top:20px">${p.view?`<a class="btn p s" href="${esc(p.view)}" target="_blank" rel="noopener">Open Live Dashboard</a>`:""}${p.gh?`<a class="btn s" href="${esc(p.gh)}" target="_blank" rel="noopener">GitHub</a>`:""}</div>`);}
+ if(e.target.closest("#dx")||e.target===dg)dg.close();
+});
+
+/* certificate */
+$("#vc").onclick=()=>{const c=CONFIG.certificate;
+ open("Forage Virtual Internship Certificate",!c?`<p class="note">Add the certificate file path to <code>CONFIG.certificate</code> (image or PDF) and it will display here.</p>`
+ :/\.pdf$/i.test(c)?`<iframe src="${esc(c)}" title="Certificate" style="width:100%;height:70vh;border:0;border-radius:12px"></iframe>`:`<img src="${esc(c)}" alt="Forage Virtual Internship completion certificate" style="width:100%;border-radius:12px">`)};
+const I=CONFIG.internship;
+$("#fi").innerHTML=(I.company?`<p><b>${esc(I.company)}</b></p>`:"")+(I.tasks.length?`<h3 style="font-size:.95rem;margin:10px 0 4px">Tasks completed</h3><ul style="color:var(--mu);padding-left:18px;margin-bottom:14px">${li(I.tasks)}</ul>`:"")+(I.skills.length?`<div style="margin-bottom:14px">${chips(I.skills)}</div>`:"");
+$("#cl").innerHTML=CONFIG.certs.map(c=>`<div class="lv"><span>${esc(c.name)}${c.issuer?" – "+esc(c.issuer):""}</span>${c.file?`<a class="btn s" href="${esc(c.file)}" target="_blank" rel="noopener">View</a>`:""}</div>`).join("");
+
+/* experience */
+$("#tr").innerHTML=chips(CONFIG.transferable);
+$("#spec").textContent=CONFIG.specialization;
+
+/* contact links */
+const L=[["Email",CONFIG.email&&"mailto:"+CONFIG.email,CONFIG.email,"M4 6h16v12H4zM4 7l8 6 8-6"],["LinkedIn",CONFIG.linkedin,CONFIG.linkedin,"M6 9v10M6 5v1M10 19v-6a3 3 0 0 1 6 0v6M10 12v7"],["GitHub",CONFIG.github,CONFIG.github,"M9 19c-4 1-4-2-6-2m12 4v-3c0-1 0-2-1-3 3 0 6-1.500 6-6a4.700 4.700 0 0 0-1-3 4.300 4.300 0 0 0 0-3s-1 0-3 1.500a10 10 0 0 0-6 0C6 3.500 5 3.500 5 3.500a4.300 4.300 0 0 0 0 3 4.700 4.700 0 0 0-1 3c0 4.500 3 6 6 6-1 1-1 2-1 3v3"]];
+$("#cl2").innerHTML=L.map(l=>`<a ${l[1]?`href="${esc(l[1])}" target="${l[0]=="Email"?"_self":"_blank"}" rel="noopener"`:`href="#contact" title="Add your ${l[0]} in the CONFIG block"`}>${ic(l[3])}<span>${l[1]?esc(l[2].replace(/^https?:\/\//,"")):l[0]+": add your details in CONFIG"}</span></a>`).join("");
+$("#so").innerHTML=L.slice(1).map(l=>`<a aria-label="${l[0]}" ${l[1]?`href="${esc(l[1])}" target="_blank" rel="noopener"`:`href="#contact"`}>${ic(l[3])}</a>`).join("");
+
+/* form validation */
+const F=$("#f"),chk={n:v=>v.trim().length>=2||"Enter your name (at least 2 characters).",e:v=>/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)||"Enter a valid email address.",m:v=>v.trim().length>=10||"Write a message of at least 10 characters."};
+F.onsubmit=e=>{e.preventDefault();let ok=true;
+ for(const k in chk){const i=$("#"+k),r=chk[k](i.value);i.classList.toggle("bad",r!==true);i.nextElementSibling.textContent=r===true?"":r;if(r!==true)ok=false}
+ if(!ok)return;
+ if(!CONFIG.email){$("#ok").textContent="Form is valid. Add your email in CONFIG so messages can be sent.";return}
+ location.href=`mailto:${CONFIG.email}?subject=${encodeURIComponent("Portfolio enquiry from "+$("#n").value)}&body=${encodeURIComponent($("#m").value+"\n\nFrom: "+$("#e").value)}`;
+ $("#ok").textContent="Opening your email app to send the message.";F.reset()};
+
+/* nav */
+const nl=$("#nl"),mb=$("#mb");
+mb.onclick=()=>{const o=nl.classList.toggle("o");mb.setAttribute("aria-expanded",o)};
+nl.onclick=e=>{if(e.target.tagName=="A")nl.classList.remove("o")};
+const secs=[...document.querySelectorAll("main section[id]")];
+const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting)nl.querySelectorAll("a").forEach(a=>a.classList.toggle("on",a.hash=="#"+x.target.id))}),{rootMargin:"-45% 0px -50% 0px"});
+secs.forEach(s=>io.observe(s));
+</script>
+</body>
+</html>
