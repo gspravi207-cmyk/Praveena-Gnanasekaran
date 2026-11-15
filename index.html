@@ -157,22 +157,6 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mu);font-size
 <section id="projects"><div class="w"><h2>Featured Projects</h2><p class="lead">Three dashboards built end to end. Open any project for the business problem, method, findings and recommendations.</p><div class="pg" id="pg"></div></div></section>
 <section id="learning"><div class="w"><h2>Internship and Certifications</h2><p class="lead">Structured learning alongside hands-on projects.</p>
 
-/* internships */
-$("#in").innerHTML=CONFIG.internships.map((x,i)=>`<div class="card">
-<span class="chip">Completed · ${esc(x.date)}</span>
-<h3>${esc(x.company)} Virtual Internship</h3>
-<p style="color:var(--mu);margin:6px 0 12px">${esc(x.title)}<br><small>Issued by Forage</small></p>
-<h3 style="font-size:.95rem;margin:10px 0 4px">Tasks completed</h3>
-<ul style="color:var(--mu);padding-left:18px;margin-bottom:16px">${li(x.tasks)}</ul>
-<button class="btn s p" data-c="${i}">View Certificate</button></div>`).join("");
-
-document.addEventListener("click",e=>{
- const b=e.target.closest("[data-c]"); if(!b)return;
- const x=CONFIG.internships[b.dataset.c];
- open(x.company+" Certificate",`<iframe src="${esc(x.file)}" title="${esc(x.company)} certificate" style="width:100%;height:70vh;border:0;border-radius:12px"></iframe>
- <p style="margin-top:12px"><a class="btn s" href="${esc(x.file)}" target="_blank" rel="noopener">Open in new tab</a></p>`);
-});
- 
 <div class="two"><div class="card"><span class="chip">Completed</span><h3>Forage Virtual Internship</h3><p style="color:var(--mu);margin:8px 0 14px">Add the verified company or programme name, the tasks you completed and the skills you developed in the CONFIG block at the top of the script.</p><div id="fi"></div><button class="btn s p" id="vc">View Certificate</button></div>
 <div class="card"><h3>More certifications</h3><p style="color:var(--mu);margin-top:8px">Space for additional certifications and learning achievements. Add each one to the <code>CONFIG.certs</code> list and it will appear here.</p><div id="cl" style="margin-top:14px"></div></div></div></div></section>
 
