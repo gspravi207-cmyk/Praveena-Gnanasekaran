@@ -72,8 +72,8 @@ nav{display:flex;align-items:center;justify-content:space-between;height:68px}
 .pg{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .pc{padding:0;overflow:hidden;display:flex;flex-direction:column;transition:transform .25s,border-color .25s}
 .pc:hover{transform:translateY(-4px);border-color:var(--bl)}
-.shot{aspect-ratio:16/10;background:var(--s2);display:grid;place-items:center;color:var(--mu);font-size:.8rem;text-align:center;padding:14px;border-bottom:1px solid var(--line);background-image:repeating-linear-gradient(90deg,transparent 0 38px,rgba(255,255,255,.03) 38px 39px)}
-.shot img{width:100%;height:100%;object-fit:cover}
+.shot{aspect-ratio:16/9;background:var(--s2);display:grid;place-items:center;color:var(--mu);font-size:.8rem;text-align:center;padding:14px;border-bottom:1px solid var(--line);background-image:repeating-linear-gradient(90deg,transparent 0 38px,rgba(255,255,255,.03) 38px 39px)}
+.shot img{width:100%;height:100%;object-fit:cover;object-position:top left;display:block}
 .pb{padding:22px;display:flex;flex-direction:column;gap:10px;flex:1}
 .pb h3{font-size:1.2rem}.pb p{color:var(--mu);font-size:.92rem}
 .pb ul{padding-left:18px;color:var(--mu);font-size:.86rem}
@@ -91,8 +91,11 @@ dialog[open]{animation:m .3s ease}
 .met{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
 .met div{background:var(--s2);border:1px solid var(--line);border-radius:12px;padding:10px 12px;font-size:.78rem;color:var(--mu)}
 .met b{display:block;font-size:1.1rem;color:var(--tx)}
-.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
-.gal .shot{border-radius:12px;border:1px solid var(--line)}
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:14px}
+.gal .shot{border-radius:12px;border:1px solid var(--line);overflow:hidden;padding:0}
+.gal .shot img{object-fit:contain;background:#0a1120;cursor:zoom-in}
+#lb{width:min(1280px,96vw);max-height:94vh;padding:8px;background:#000;border-radius:14px}
+#lb img{width:100%;display:block;border-radius:8px;cursor:zoom-out}
 .note{border-left:3px solid var(--bl);padding:8px 14px;background:var(--s1);border-radius:0 10px 10px 0;font-size:.88rem}
 /* timeline etc */
 .tl{border-left:2px solid var(--line);padding-left:26px;position:relative}
@@ -160,15 +163,16 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mu);font-size
 
 <section id="projects"><div class="w"><h2>Featured Projects</h2><p class="lead">Three dashboards built end to end in Power BI and Tableau. Open any project for the objective, metrics, method, insights and recommendations.</p><div class="pg" id="pg"></div></div></section>
 
-<section id="learning"><div class="w"><h2>Internships and Certifications</h2><p class="lead">Two Forage virtual job simulations completed in August 2026, with certificates.</p>
+<section id="learning"><div class="w"><h2>Internships and Certifications</h2><p class="lead">Two Forage virtual job simulations completed in August 2026, plus additional training certificates.</p>
 <div class="two" id="in"></div>
 <div class="card" style="margin-top:20px"><h3>More certifications</h3><p style="color:var(--mu);margin-top:8px">Space for additional certifications and learning achievements. Add each one to the <code>CONFIG.certs</code> list and it will appear here.</p><div id="cl" style="margin-top:14px"></div></div></div></section>
+
 
 <section id="experience"><div class="w"><h2>Experience and Education</h2><p class="lead">Four years of accuracy-driven operational work is the foundation for my move into analytics.</p>
 <div class="cv"><div class="tl"><h3>BPO / Data Entry Operations</h3><p style="color:var(--mu);margin:4px 0 14px">4+ years</p><div id="tr"></div></div>
 <div class="card"><span class="chip">Education</span><h3>Postgraduate Degree</h3><p style="color:var(--mu)">Bharathidasan University<br>Completed: 2021<br><span id="spec"></span></p></div></div></div></section>
 
-<section><div class="w"><div class="band"><h2>Interested in Working Together?</h2><p class="lead">Explore my professional background, technical skills, and Data Analytics projects.</p><div class="cta"><a class="btn p" data-k="resume" href="resume.pdf" download>Download My Resume</a><a class="btn" href="#contact">Contact Me</a></div></div></div></section>
+<section><div class="w"><div class="band"><h2>Interested in Working Together?</h2><p class="lead">Explore my professional background, technical skills, and Data Analytics projects.</p><div class="cta"><a class="btn p" data-k="resume" href="documents/resume.pdf" download>Download My Resume</a><a class="btn" href="#contact">Contact Me</a></div></div></div></section>
 
 <section id="contact"><div class="w"><h2>Let's Connect!</h2><p class="lead">I'm actively looking for opportunities to begin my career in Data Analytics. Feel free to connect with me regarding job opportunities, collaborations, or professional discussions.</p>
 <div class="ct"><div class="cl" id="cl2"></div>
@@ -180,6 +184,7 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mu);font-size
 
 <footer><div class="w fl"><div><b>Designed and Developed by Praveena Gnanasekaran</b><br>Turning Data Into Meaningful Insights.<br>© 2026 Praveena Gnanasekaran. All Rights Reserved.</div><div class="so" id="so"></div></div></footer>
 
+<dialog id="lb" aria-label="Screenshot preview"><img alt=""></dialog>
 <dialog id="dg" aria-labelledby="dt"><div class="mh"><b id="dt"></b><button class="btn s" id="dx" aria-label="Close">Close</button></div><div class="mb" id="db"></div></dialog>
 
 <script>
@@ -189,26 +194,28 @@ const CONFIG={
  linkedin:"",         // full LinkedIn profile URL
  github:"",           // full GitHub profile URL
  photo:"",            // path to your photo, e.g. "photo.jpg"
- resume:"documents/resume.pdf", // your ATS-friendly PDF, saved beside index.html
+ resume:"documents/resume.pdf", // your ATS-friendly PDF, saved in the documents folder
  specialization:"",   // optional degree specialization
  internships:[
   {company:"Deloitte",title:"Data Analytics Job Simulation",date:"August 7, 2026",
    tasks:["Data analysis","Forensic technology"],
    file:"documents/deloitte-certificate.pdf"},
-/* Screenshots: add image paths to each project's "shots" list, e.g.
-   shots:["images/healthcare-1.png"] */
-
-  
   {company:"Tata",title:"Data Visualisation: Empowering Business with Effective Insights",date:"August 23, 2026",
    tasks:["Framing the Business Scenario","Choosing the Right Visuals","Creating Effective Visuals","Communicating Insights and Analysis"],
    file:"documents/tata-certificate.pdf"}
  ],
- certs:[],            // e.g. [{name:"...",issuer:"...",file:"cert.pdf"}]
+ certs:[
+  {name:"Advanced Excel with AI",issuer:"Internshala Trainings",date:"2026",   // confirm issuer and date to match your certificate
+   file:"documents/advanced-excel-certificate.png"},
+  {name:"21 Days Power BI MasterClass",issuer:"NoviTech R&D",date:"24 Sep to 22 Oct 2026",
+   file:"documents/novitech-certificate.png"}
+ ],
  transferable:["Data Accuracy","Data Validation","Attention to Detail","Record Management","Time Management","Process Compliance","Information Handling"]
 };
 
-/* Screenshots: add image paths to each project's "shots" list, e.g.
-   shots:["images/healthcare-1.png","images/healthcare-2.png","images/healthcare-3.png"] */
+/* SCREENSHOTS: save images in an "images" folder next to index.html and list them per project, e.g.
+   shots:["images/hr-1.png","images/hr-2.png","images/hr-3.png"]
+   Use relative paths like these. A full Windows path such as C:\\Users\\... will not work on a website. */
 const PROJECTS=[
 {id:"healthcare",t:"Healthcare Analytics Dashboard",tool:"Microsoft Power BI",data:"Healthcare admissions dataset, 2019 to May 2024",
  hl:"55.5K admissions | 40K patients | ₹1.42bn billed",
@@ -235,7 +242,7 @@ const PROJECTS=[
   "Focus follow-up and chronic-care programmes on seniors and repeat patients, who drive a large share of admissions.",
   "Audit negative billing records with the finance team before relying on revenue totals.",
   "Keep tracking each insurer's share of revenue over time, since the five providers are currently balanced."],
- shots:["images/healthcare-1.png","images/healthcare-2","healthcare-3.png"],view:"",gh:""},
+ shots:["images/healthcare-1.png","images/healthcare-2.png","images/healthcare-3.png"],view:"",gh:""},
 
 {id:"hr",t:"HR Analytics Dashboard",tool:"Microsoft Power BI",data:"HR attrition dataset (Indian companies), about 5,000 employees",
  hl:"5K employees | 37% attrition rate | 341M monthly payroll",
@@ -262,7 +269,7 @@ const PROJECTS=[
   "Review workload, overtime and pay benchmarks in Sales, where attrition, overtime and the lowest average pay coincide.",
   "Connect appraisal outcomes to feedback and development plans, since low-rated employees leave most often.",
   "Measure attrition rate by salary band against band headcount to see where pay really drives exits."],
- shots:["images/hr-1.png","images/hr-2","images/hr-3"],view:"",gh:""},
+ shots:["images/hr-1.png","images/hr-2.png","images/hr-3.png"],view:"",gh:""},
 
 {id:"complaints",t:"Customer Complaint Dashboard",tool:"Tableau Public",data:"Customer complaint dataset from Kaggle, 2021 to 2025",
  hl:"10,000 complaints | 87.84% timely response | 15 companies",
@@ -288,7 +295,7 @@ const PROJECTS=[
   "Target the roughly 12% of untimely responses by tracking response deadlines for each company.",
   "Improve the quality of explanations in closed cases, since most are closed with explanation only and almost one in five is disputed.",
   "Give extra attention to credit card and bank account complaints, which have the highest volume and the most disputes."],
- shots:["images/customercomplaint-1.png","images/customercomplaint-2.png","images/customercomplaint-3"],view:"https://public.tableau.com/app/profile/praveena.gnanasekaran/viz/Book1_17896025292850/Dashboard1?publish=yes",gh:""}];
+ shots:["images/customercomplaint-1.png","images/customercomplaint-2.png","images/customercomplaint-3.png"],view:"https://public.tableau.com/app/profile/praveena.gnanasekaran/viz/Book1_17896025292850/Dashboard1?publish=yes",gh:""}];
 
 const SKILLS=[
 {t:"Advanced Excel",icon:"M3 3v18h18M7 14l4-4 3 3 5-6",items:[["Advanced Excel",3,"Advanced"]],
@@ -310,7 +317,17 @@ const ic=p=>`<svg class="i" viewBox="0 0 24 24"><path d="${p}"/></svg>`;
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const li=a=>a.map(x=>`<li>${esc(x)}</li>`).join("");
 const chips=a=>a.map(x=>`<span class="chip">${esc(x)}</span>`).join("");
-const shot=(src,label)=>src?`<div class="shot"><img src="${esc(src)}" alt="${esc(label)}" loading="lazy"></div>`:`<div class="shot">Dashboard screenshot placeholder<br>Add the image path to this project's <code>shots</code> list</div>`;
+const shot=(src,label)=>src?`<div class="shot"><img src="${esc(src)}" alt="${esc(label)}" loading="lazy"></div>`:`<div class="shot">Screenshot coming soon</div>`;
+
+/* missing images show their expected path instead of a broken icon */
+document.addEventListener("error",e=>{const t=e.target;if(t.tagName==="IMG"&&t.closest(".shot"))t.parentNode.textContent="Image not found: "+t.getAttribute("src")},true);
+/* click a screenshot to enlarge it */
+const lb=document.getElementById("lb");
+document.addEventListener("click",e=>{
+ const im=e.target.closest(".gal img");
+ if(im){lb.querySelector("img").src=im.src;lb.querySelector("img").alt=im.alt;lb.showModal();return}
+ if(e.target.closest("#lb"))lb.close();
+});
 
 /* hero chart + photo */
 $("#bars").innerHTML=[40,62,48,78,58,90,70].map((h,i)=>`<i style="height:${h}%;animation-delay:${i*.08}s"></i>`).join("");
@@ -336,7 +353,7 @@ document.addEventListener("click",e=>{
  if(b){const p=PROJECTS.find(x=>x.id===b.dataset.p);
   open(p.t,`<span class="chip">${esc(p.tool)}</span><span class="chip">${esc(p.data)}</span><p style="margin-top:8px">${esc(p.d)}</p>
   <h3>Key metrics</h3><div class="met">${p.metrics.map(m=>`<div>${esc(m[0])}<b>${esc(m[1])}</b></div>`).join("")}</div>
-  <h3>Screenshots</h3><div class="gal">${[0,1,2].map(i=>shot(p.shots[i],p.t+" screenshot "+(i+1))).join("")}</div>
+  <h3>Screenshots</h3><div class="gal">${(p.shots.length?p.shots:[""]).map((s,i)=>shot(s,p.t+" screenshot "+(i+1))).join("")}</div>
   <h3>Business objective</h3><p>${esc(p.problem)}</p>
   <h3>Key features</h3><ul>${li(p.feats)}</ul>
   <h3>Visuals used</h3>${chips(p.visuals)}
@@ -366,7 +383,21 @@ document.addEventListener("click",e=>{
  <p style="margin-top:12px"><a class="btn s" href="${esc(x.file)}" target="_blank" rel="noopener">Open in new tab</a></p>`);
 });
 
-$("#cl").innerHTML=CONFIG.certs.map(c=>`<div class="lv"><span>${esc(c.name)}${c.issuer?" – "+esc(c.issuer):""}</span>${c.file?`<a class="btn s" href="${esc(c.file)}" target="_blank" rel="noopener">View</a>`:""}</div>`).join("");
+/* more certifications */
+$("#cl").innerHTML=CONFIG.certs.map((c,i)=>`<div class="card">
+<span class="chip">${esc(c.date)}</span>
+<h3>${esc(c.name)}</h3>
+<p style="color:var(--mu);margin:6px 0 16px">${esc(c.issuer)}</p>
+<button class="btn s p" data-m="${i}">View Certificate</button></div>`).join("");
+
+document.addEventListener("click",e=>{
+ const b=e.target.closest("[data-m]"); if(!b)return;
+ const c=CONFIG.certs[b.dataset.m],f=esc(c.file);
+ open(c.name,(/\.pdf$/i.test(c.file)
+  ?`<iframe src="${f}" title="${esc(c.name)} certificate" style="width:100%;height:70vh;border:0;border-radius:12px"></iframe>`
+  :`<img src="${f}" alt="${esc(c.name)} certificate" style="width:100%;border-radius:12px">`)
+  +`<p style="margin-top:12px"><a class="btn s" href="${f}" target="_blank" rel="noopener">Open in new tab</a></p>`);
+});
 
 /* experience */
 $("#tr").innerHTML=chips(CONFIG.transferable);
